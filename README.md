@@ -1,114 +1,207 @@
-Project Title: Aptos Creator-Verse
+# Aptos Creator-Verse
 
-The Problem:-
-The creator economy is fragmented and inefficient. Creators struggle with proving and protecting their intellectual property, receiving timely and transparent royalties, and monetizing content through micro-payments. This lack of a cohesive ecosystem hinders fair compensation and genuine fan engagement.
+A decentralized platform reimagining how creators and fans interact, own, and monetize digital content using Aptos blockchain's parallel execution capabilities.
 
-The Solution:-
-Aptos Creator-Verse is a decentralized platform built to empower creators. We are reimagining how creators and fans interact, own, and monetize digital content by leveraging the unique strengths of the Aptos blockchain. Our solution provides:
+## Overview
 
-AI-Powered IP Registration: Securely register content as an immutable NFT on the blockchain, creating a non-fungible proof of ownership.
+Creator-Verse solves critical problems in the creator economy: proof of IP ownership, complex royalty distribution, inefficient micro-payments, and dispersed fan engagement through blockchain-native solutions.
 
-Fractionalized IP Ownership: Tokenize content royalty streams, allowing fans to invest and become co-owners.
+## Features
 
-Real-Time Royalty Distribution: Use smart contracts to instantly and automatically distribute micro-payments to all stakeholders as content is consumed.
+### Core Functionality
+- **AI-Powered IP Registration**: Cryptographic fingerprinting and NFT-based proof of ownership
+- **Fractionalized IP Ownership**: Tokenized royalty streams for fan investment
+- **Real-Time Royalty Distribution**: Smart contract-based automatic payments
+- **Decentralized Fan Communities**: DAO governance for creator-fan engagement
 
-Decentralized Fan Engagement: Foster a deeper community connection through creator-led DAOs.
+### Technical Advantages
+- **Parallel Transaction Processing**: Leverages Aptos Block-STM for simultaneous operations
+- **Micro-Payment Optimization**: Sub-second finality enables economically viable small payments
+- **Asset Security**: Move programming language ensures secure digital asset handling
 
-Why Aptos?
-Aptos is the optimal foundation for this project:
+## Project Structure
 
-Parallel Execution (Block-STM): Crucial for handling the high volume of simultaneous transactions, ensuring a smooth and scalable user experience.
+```
+aptos-creator-verse/
+├── contracts/                  # Move smart contracts
+│   ├── sources/
+│   │   ├── creator_verse.move     # Main platform contract
+│   │   ├── ip_registry.move       # IP registration and fingerprinting
+│   │   ├── royalty_splitter.move  # Automatic royalty distribution
+│   │   └── fractional_nft.move    # Fractionalized ownership tokens
+│   ├── tests/                     # Contract tests
+│   └── Move.toml                  # Move package configuration
+├── frontend/                   # React frontend application
+│   ├── src/
+│   │   ├── components/            # React components
+│   │   ├── pages/                 # Application pages
+│   │   ├── hooks/                 # Custom React hooks
+│   │   ├── utils/                 # Utility functions
+│   │   └── types/                 # TypeScript definitions
+│   ├── public/
+│   └── package.json
+├── ai-service/                 # AI fingerprinting service
+│   ├── models/                    # ML models for content fingerprinting
+│   ├── api/                       # FastAPI endpoints
+│   ├── requirements.txt
+│   └── Dockerfile
+├── indexer/                    # Blockchain data indexer
+│   ├── src/
+│   │   ├── processors/            # Event processors
+│   │   └── database/              # Database schemas
+│   └── package.json
+├── docs/                       # Documentation
+│   ├── api/                       # API documentation
+│   ├── contracts/                 # Contract documentation
+│   └── user-guide/                # User guides
+└── README.md
+```
 
-High Transaction Throughput & Low Fees: Makes real-time, micro-payment distribution for content consumption economically viable.
+## Technology Stack
 
-Move Programming Language: Provides a secure, asset-centric model that ensures the integrity and predictable handling of digital assets.
+### Blockchain
+- **Aptos Blockchain**: Main network for smart contracts
+- **Move Language**: Smart contract development
+- **Aptos SDK**: Blockchain interaction
 
-Project Structure
-Our repository is organized into a clean, modular structure to facilitate development and maintenance.
+### Frontend
+- **React 18**: User interface framework
+- **TypeScript**: Type-safe development
+- **Tailwind CSS**: Styling framework
+- **Aptos Wallet Adapter**: Wallet integration
 
-/Aptos-Creator-Verse
-├── /public                      # Static assets for the web application
-│   ├── ...
-├── /src                         # Source code for the web application
-│   ├── /assets                  # Images, icons, and other static files
-│   ├── /components              # Reusable UI components
-│   ├── /layouts                 # Page layouts
-│   ├── /pages                   # Application pages
-│   ├── /contracts               # Aptos Move smart contracts
-│   │   ├── CreatorVerse.move
-│   │   └── ...
-│   ├── App.tsx                  # Main React component
-│   └── main.tsx                 # Entry point of the application
-├── .gitignore                   # Specifies files to ignore from Git
-├── package.json                 # Node.js dependencies and scripts
-├── vite.config.ts               # Configuration for the Vite development server
-├── tailwind.config.ts           # Tailwind CSS configuration
-├── tsconfig.json                # TypeScript compiler configuration
-└── ...
-Roadmap
-Phase 1: Minimum Viable Product (MVP)
+### Backend Services
+- **FastAPI**: AI service API
+- **PostgreSQL**: Indexer database
+- **Redis**: Caching layer
+- **Docker**: Containerization
 
-Implement core smart contracts for IP registration and fractionalized ownership.
+### AI/ML
+- **TensorFlow**: Content fingerprinting models
+- **OpenAI API**: Content analysis
+- **IPFS**: Decentralized file storage
 
-Build a basic front-end to allow creators to upload content and mint ownership NFTs.
+## Quick Start
 
-Enable a simple fan dashboard to view and purchase fractionalized IP tokens.
+### Prerequisites
+- Node.js 18+
+- Python 3.9+
+- Docker
+- Aptos CLI
 
-Integrate a mock or test-net royalty distribution system.
+### Installation
 
-Phase 2: Advanced Functionality
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/sinamchayan/Aptos-Creator-Verse.git
+   cd Aptos-Creator-Verse
+   ```
 
-Integrate the AI-powered cryptographic fingerprinting model.
+2. **Deploy Contracts**
+   ```bash
+   cd contracts
+   aptos move compile
+   aptos move test
+   aptos move publish
+   ```
 
-Develop the real-time, smart-contract-based royalty distribution system with an external API.
+3. **Start AI Service**
+   ```bash
+   cd ai-service
+   pip install -r requirements.txt
+   uvicorn main:app --reload
+   ```
 
-Build out the DAO governance features for fan communities.
+4. **Launch Frontend**
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
 
-Phase 3: Ecosystem Expansion
+5. **Run Indexer**
+   ```bash
+   cd indexer
+   npm install
+   npm run start
+   ```
 
-Create a marketplace for fractionalized IP tokens.
+## Smart Contract Addresses
 
-Onboard early-adopter creators and their content.
+| Contract | Mainnet | Testnet |
+|----------|---------|---------|
+| CreatorVerse | `0x...` | `0x...` |
+| IPRegistry | `0x...` | `0x...` |
+| RoyaltySplitter | `0x...` | `0x...` |
+| FractionalNFT | `0x...` | `0x...` |
 
-Focus on optimizing the user experience and platform security.
+## API Endpoints
 
-How to Run the Project
-To get a local copy up and running, follow these steps.
+### Creator Operations
+- `POST /api/creators/register` - Register new creator
+- `POST /api/content/upload` - Upload and fingerprint content
+- `GET /api/content/{id}` - Get content details
 
-Prerequisites:
+### IP Management
+- `POST /api/ip/register` - Register IP ownership
+- `GET /api/ip/{id}/owners` - Get fractional owners
+- `POST /api/ip/{id}/fractionalize` - Create fractional tokens
 
-Aptos CLI: To compile and deploy the Move smart contracts.
+### Royalty Distribution
+- `POST /api/royalties/distribute` - Trigger distribution
+- `GET /api/royalties/{creator_id}` - Get royalty history
 
-Node.js & npm: To manage the frontend dependencies.
+## Testing
 
-Rust: The Move language is built on Rust.
+### Contract Tests
+```bash
+cd contracts
+aptos move test
+```
 
-Installation:
+### Frontend Tests
+```bash
+cd frontend
+npm run test
+```
 
-Clone the repository:
+### Integration Tests
+```bash
+npm run test:integration
+```
 
-Bash
+## Deployment
 
-git clone https://github.com/sinamchayan/Aptos-Creator-Verse.git
-cd Aptos-Creator-Verse
-Install frontend dependencies:
+### Testnet
+```bash
+npm run deploy:testnet
+```
 
-Bash
+### Mainnet
+```bash
+npm run deploy:mainnet
+```
 
-npm install
-Compile and Deploy Smart Contracts:
+## Contributing
 
-Navigate to the smart contracts directory and use the Aptos CLI to compile and publish the Move modules to your local or test network.
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open Pull Request
 
-Example command (ensure your ~/.aptos/config.yaml is set up):
+## License
 
-Bash
+MIT License - see [LICENSE](LICENSE) file for details.
 
-aptos move compile --named-addresses CreatorVerse=default
-aptos move publish --named-addresses CreatorVerse=default
+## Contact
 
-Run the application:
-npm run dev
-Bash
+**Sina Chayan**
+- GitHub: [@sinamchayan](https://github.com/sinamchayan)
+- Email: sina@creatorverse.app
 
-npm run dev
+## Acknowledgments
+
+- Aptos Foundation for blockchain infrastructure
+- Move Language community for development resources
+- Creator economy pioneers for inspiration
