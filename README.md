@@ -190,16 +190,6 @@ npm run deploy:mainnet
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open Pull Request
 
-## License
-
-MIT License - see [LICENSE](LICENSE) file for details.
-
-## Contact
-
-**Sina Chayan**
-- GitHub: [@sinamchayan](https://github.com/sinamchayan)
-- Email: sina@creatorverse.app
-
 ## Acknowledgments
 
 - Aptos Foundation for blockchain infrastructure
